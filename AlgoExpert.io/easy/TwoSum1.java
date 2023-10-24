@@ -1,6 +1,7 @@
+package easy;
 import java.util.*;
 
-class Program {
+class TwoSum1 {
   public static int[] twoNumberSum(int[] array, int targetSum) {
 
     for(int i=0; i<array.length; i++){

@@ -1,7 +1,8 @@
+package easy;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-class Program {
+class TournamentWinner {
     public String tournamentWinner(
         ArrayList<ArrayList<String>> competitions,
         ArrayList<Integer> results

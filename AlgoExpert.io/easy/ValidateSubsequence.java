@@ -1,6 +1,7 @@
+package easy;
 import java.util.*;
 
-class Program {
+class ValidateSubsequence {
   public static boolean isValidSubsequence(
     List<Integer> array, List<Integer> sequence
   ) {
