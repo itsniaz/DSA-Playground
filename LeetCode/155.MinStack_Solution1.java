@@ -1,47 +1,46 @@
+import java.util.*;
 class MinStack {
 
-    Node head;
-
-    private class Node {
-
-    int val;
-    int min;
-    Node previous;
-
-        Node(int val,int min,Node previous){
-            this.val = val;
-            this.min = min;
-            this.previous = previous;
-        }
-    }
-
+    List<Integer> nums  = new ArrayList<Integer>(); 
+    int min = Integer.MAX_VALUE;
+    int top = 0;
 
     public MinStack() {
-
+        
     }
-
+    
     public void push(int val) {
-
-        if(head == null){
-            head = new Node(val,val,null);
+        nums.add(val);
+        top = val;
+        if(val<min){
+            min = val;
         }
-        else{
-            int min = Math.min(head.val, val);
-            head = new Node(val,min,head);
-        }
-
     }
-
+    
     public void pop() {
-        head = head.previous;
+        nums.remove(nums.size()-1);
+        min = Integer.MAX_VALUE;
+        for(int num : nums){
+            if(num<min){
+                min = num;
+            }
+        }
     }
-
+    
     public int top() {
-        return head.val;
+       return nums.get(nums.size()-1);
     }
-
+    
     public int getMin() {
-
-        return  head.min;
+        return min;
     }
 }
+
+/**
+ * Your MinStack object will be instantiated and called as such:
+ * MinStack obj = new MinStack();
+ * obj.push(val);
+ * obj.pop();
+ * int param_3 = obj.top();
+ * int param_4 = obj.getMin();
+ */
